@@ -3,7 +3,6 @@ import Canvas from './Canvas';
 import { getFileURL, getImageFromURL, canvasToPNG } from './utils';
 import {
   StyledGrayableEmoji,
-  StyledApp,
   StyledTitle,
   StyledSubtitle,
   StyledHeader,
@@ -59,7 +58,7 @@ function App() {
   };
 
   return (
-    <StyledApp>
+    <div>
       <StyledHeader>
         <StyledTitle>GEAAS</StyledTitle>
         <StyledSubtitle>
@@ -126,7 +125,7 @@ function App() {
           label="ghost"
         />
       </StyledLink>
-    </StyledApp>
+    </div>
   );
 }
 

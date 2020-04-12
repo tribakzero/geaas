@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { injectGlobal } from 'styled-components';
 import Emoji from 'a11y-react-emoji';
 
-export const StyledApp = styled.div`
-  margin: 0;
+injectGlobal`
+  body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -17,6 +17,7 @@ export const StyledApp = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  }
 `;
 
 export const StyledHeader = styled.header`
