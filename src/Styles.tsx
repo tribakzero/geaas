@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
   text-align: center;
   color: #FFFFFF;
   background-color: #282C34;
