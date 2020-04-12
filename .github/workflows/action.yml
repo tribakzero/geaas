@@ -36,14 +36,15 @@ jobs:
 
     # Deploys to Heroku
     - name: Deploy to Heroku
-      uses: AkhileshNS/heroku-deploy@v3.0.2
+      uses: actions/checkout@v2
+      uses: AkhileshNS/heroku-deploy@master
       with:
         # This will be used for authentication. You can find it in your heroku homepage account settings
         heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
         # Email that you use with heroku
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
         # The appname to use for deploying/updating
-        heroku_app_name: "geaas"
+        heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
         # An optional buildpack to use when creating the heroku application
         buildpack: # optional
         # The branch that you would like to deploy to Heroku
