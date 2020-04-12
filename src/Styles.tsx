@@ -54,14 +54,14 @@ export const StyledHalfLabel = styled.label`
   box-sizing: border-box;
   padding: 0.5em;
   width: 50%;
-
-  @media (max-width: 619px) {
-    width: 100%;
-  }
 `;
 
 export const StyledThirdLabel = styled(StyledHalfLabel)`
   width: 33.3%;
+
+  @media (max-width: 619px) {
+    width: 100%;
+  }
 `;
 
 export const StyledInput = styled.input`
