@@ -44,13 +44,3 @@ jobs:
         heroku_email: ${{ secrets.HEROKU_EMAIL }}
         # The appname to use for deploying/updating
         heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-        # An optional buildpack to use when creating the heroku application
-        buildpack: # optional
-        # The branch that you would like to deploy to Heroku
-        branch: # optional, default is HEAD
-        # Set this to true if you don't want to use --force when switching branches
-        dontuseforce: # optional
-        # Will deploy using Dockerfile in project root.
-        usedocker: # optional
-        # Set if your app is located in a subdirectory.
-        appdir: # optional, default is   
