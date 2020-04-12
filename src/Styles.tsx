@@ -41,7 +41,7 @@ export const StyledPrimaryFieldset = styled.fieldset`
   background-color: #161a1f;
   border: 0;
   border-radius: 0.5em;
-  margin: 1em;
+  margin: 1em auto;
 `;
 
 export const StyledSecondaryFieldset = styled.fieldset`
