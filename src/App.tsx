@@ -2,6 +2,7 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import Canvas from './Canvas';
 import { getFileURL, getImageFromURL, canvasToPNG } from './utils';
 import {
+  GlobalStyle,
   StyledGrayableEmoji,
   StyledTitle,
   StyledSubtitle,
@@ -58,7 +59,8 @@ function App() {
   };
 
   return (
-    <div>
+    <>
+      <GlobalStyle />
       <StyledHeader>
         <StyledTitle>GEAAS</StyledTitle>
         <StyledSubtitle>
@@ -125,7 +127,7 @@ function App() {
           label="ghost"
         />
       </StyledLink>
-    </div>
+    </>
   );
 }
 

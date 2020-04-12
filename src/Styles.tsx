@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Emoji from 'a11y-react-emoji';
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
   body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
