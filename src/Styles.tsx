@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import Emoji from 'a11y-react-emoji';
 
 export const StyledApp = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #FFFFFF;
   background-color: #282C34;
