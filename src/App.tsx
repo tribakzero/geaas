@@ -7,8 +7,7 @@ import {
   StyledTitle,
   StyledSubtitle,
   StyledHeader,
-  StyledPrimaryFieldset,
-  StyledSecondaryFieldset,
+  StyledFieldset,
   StyledInputsWrapper,
   StyledHalfLabel,
   StyledThirdLabel,
@@ -82,13 +81,13 @@ function App() {
         grayscale={grayscale}
         onCanvasChange={handleRefChange}
       />
-      <StyledPrimaryFieldset>
+      <StyledFieldset>
         <legend>Step 1. Select Overlay Image:</legend>
         <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
-      </StyledPrimaryFieldset>
+      </StyledFieldset>
 
       {overlay && 
-        <StyledSecondaryFieldset>
+        <StyledFieldset>
           <legend>Step 2. Face customization:</legend>
           <StyledInputsWrapper>
             <StyledHalfLabel>
@@ -116,7 +115,7 @@ function App() {
               <StyledBlockInput type="range" min="0" max={1} step="0.01" value={scale} onChange={event => setScale(parseFloat(event.target.value))} />
             </StyledThirdLabel>
           </StyledInputsWrapper>
-        </StyledSecondaryFieldset>
+        </StyledFieldset>
       }
 
       <StyledLink href={downloadURL} download="ghost-name.png">

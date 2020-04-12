@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
+  padding: 1em;
   text-align: center;
   color: #FFFFFF;
   background-color: #282C34;
@@ -35,22 +36,13 @@ export const StyledSubtitle = styled.p`
   font-size: 0.8em;
 `;
 
-export const StyledPrimaryFieldset = styled.fieldset`
+export const StyledFieldset = styled.fieldset`
   user-select: none;
   width: 70%;
   background-color: #161a1f;
   border: 0;
   border-radius: 0.5em;
   margin: 1em auto;
-`;
-
-export const StyledSecondaryFieldset = styled.fieldset`
-  user-select: none;
-  width: 70%;
-  background-color: #161a1f;
-  border: 0;
-  border-radius: 0.5em;
-  margin: 1em;
 `;
 
 export const StyledInputsWrapper = styled.div`
