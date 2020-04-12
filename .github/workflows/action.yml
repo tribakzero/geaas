@@ -22,17 +22,14 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-
     # Runs yarn test
     - name: Yarn Test Action
       uses: onichandame/node-test-action@0.0.0
-  
+
+    # Deploys to Heroku
+    - name: Heroku Deploy with Telegram
+      uses: Suvink/heroku-deploy@v1.0
+      with:
+        # The app you want to deploy into.
+        heroku_app_name: geaas
+        heroku_email: tribak.zero+geaas@gmail.com
