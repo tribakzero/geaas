@@ -36,7 +36,6 @@ jobs:
 
     # Deploys to Heroku
     - name: Deploy to Heroku
-      uses: actions/checkout@v2
       uses: AkhileshNS/heroku-deploy@master
       with:
         # This will be used for authentication. You can find it in your heroku homepage account settings
