@@ -136,6 +136,6 @@ const App = () => {
       </StyledLink>
     </>
   );
-}
+};
 
 export default App;
