@@ -25,7 +25,7 @@ jobs:
 
     # Run lint tools
     - name: Run lint tools
-      run: tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet
+      run: yarn tsc --noEmit && yarn eslint '*/**/*.{js,ts,tsx}' --quiet
 
     # Tests project
     - name: Test project
