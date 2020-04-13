@@ -7,8 +7,6 @@ name: CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -25,6 +23,10 @@ jobs:
     # Install dependencies
     - name: Install dependencies
       run: yarn install
+
+    # Run lint tools
+    - name: Run lint tools
+      run: tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet
 
     # Tests project
     - name: Test project

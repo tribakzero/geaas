@@ -78,15 +78,16 @@ export const StyledLink = styled.a`
   font-weight: bold;
   text-decoration: none;
   background-color: #111111;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 0.5em;
   border-radius: 0.5em;
-  &:visited, &:hover {
+  &:visited,
+  &:hover {
     background-color: #222222;
-    color: #EEEEEE;
+    color: #eeeeee;
   }
 `;
 
-export const StyledGrayableEmoji = styled(({ grayscale:Boolean, ...props }) => <Emoji {...props} />)`
-  filter: grayscale(${props => props.grayscale ? 100 : 0}%);
+export const StyledGrayableEmoji = styled(({ grayscale: Boolean, ...props }) => <Emoji {...props} />)`
+  filter: grayscale(${(props) => (props.grayscale ? 100 : 0)}%);
 `;

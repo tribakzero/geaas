@@ -5,8 +5,8 @@ const canvasRef = React.createRef<HTMLCanvasElement>();
 interface CanvasProps {
   width: number;
   height: number;
-  ghost: HTMLImageElement|null;
-  overlay: HTMLImageElement|null;
+  ghost: HTMLImageElement | null;
+  overlay: HTMLImageElement | null;
   x: number;
   y: number;
   scale: number;
@@ -16,8 +16,7 @@ interface CanvasProps {
 
 const Canvas = (props: CanvasProps) => {
   const { width, height, onCanvasChange, ghost, overlay, x, y, scale, grayscale } = props;
-  
-  
+
   useEffect(() => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;
@@ -30,10 +29,9 @@ const Canvas = (props: CanvasProps) => {
         onCanvasChange(canvas);
       }
     }
-  },[onCanvasChange, ghost, overlay, x, y, scale, grayscale]);
-  
-  return (<canvas ref={canvasRef} width={width} height={height} />);
-  };
-  
-  export default Canvas;
-  
+  }, [onCanvasChange, ghost, overlay, x, y, scale, grayscale]);
+
+  return <canvas ref={canvasRef} width={width} height={height} />;
+};
+
+export default Canvas;
