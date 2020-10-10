@@ -78,13 +78,13 @@ const App = () => {
           onCanvasChange={handleRefChange}
         />
         <StyledFieldset>
-          <legend>Step 1. Select Overlay Image:</legend>
+          <legend>Step 1. Select Overlay Image</legend>
           <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
         </StyledFieldset>
 
         {overlay && (
           <StyledFieldset>
-            <legend>Step 2. Face customization:</legend>
+            <legend>Step 2. Face customization</legend>
             <StyledInputsWrapper>
               <StyledHalfLabel>
                 Ghost Face:
@@ -133,9 +133,14 @@ const App = () => {
           </StyledFieldset>
         )}
 
-        <StyledLink href={downloadURL} download="ghost-name.png">
-          DOWNLOAD GHOST <Emoji symbol="👻" label="ghost" />
-        </StyledLink>
+        {overlay && (
+          <StyledFieldset>
+            <legend>Step 3. Profit!</legend>
+            <StyledLink href={downloadURL} download="ghost-name.png">
+              DOWNLOAD GHOST <Emoji symbol="👻" label="ghost" />
+            </StyledLink>
+          </StyledFieldset>
+        )}
       </StyledAppWrapper>
     </>
   );
