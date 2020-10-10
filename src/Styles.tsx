@@ -21,7 +21,6 @@ interface GrayscaleProps {
 
 export const StyledAppWrapper = styled.div<GrayscaleProps>`
   margin: 0;
-  padding: 1em;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,6 +30,10 @@ export const StyledAppWrapper = styled.div<GrayscaleProps>`
   transition-property: filter;
   transition-duration: 0.5s;
   filter: grayscale(${(props) => (props.grayscale ? 100 : 0)}%);
+`;
+
+export const StyledContentWrapper = styled.div`
+  padding-bottom: 4em;
 `;
 
 export const StyledHeader = styled.header`
@@ -97,4 +100,14 @@ export const StyledLink = styled.a`
     background-color: #222222;
     color: #eeeeee;
   }
+`;
+
+export const StyledFooter = styled.footer`
+  background: #161a1f;
+  left: 0;
+  right: 0;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  margin-top: 1em;
 `;
