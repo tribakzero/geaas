@@ -1,9 +1,10 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
+import Emoji from 'a11y-react-emoji';
 import Canvas from './Canvas';
 import { getFileURL, getImageFromURL, canvasToPNG } from './utils';
 import {
   GlobalStyle,
-  StyledGrayableEmoji,
+  StyledAppWrapper,
   StyledTitle,
   StyledSubtitle,
   StyledHeader,
@@ -58,82 +59,84 @@ const App = () => {
   return (
     <>
       <GlobalStyle />
-      <StyledHeader>
-        <StyledTitle>GEAAS</StyledTitle>
-        <StyledSubtitle>
-          <StyledGrayableEmoji grayscale={grayscale} symbol="👻" label="ghost" /> Ghost Emoji As A Service
-        </StyledSubtitle>
-      </StyledHeader>
-      <Canvas
-        width={width}
-        height={height}
-        ghost={ghost}
-        overlay={overlay}
-        x={x}
-        y={y}
-        scale={scale}
-        grayscale={grayscale}
-        onCanvasChange={handleRefChange}
-      />
-      <StyledFieldset>
-        <legend>Step 1. Select Overlay Image:</legend>
-        <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
-      </StyledFieldset>
-
-      {overlay && (
+      <StyledAppWrapper grayscale={grayscale}>
+        <StyledHeader>
+          <StyledTitle>GEAAS</StyledTitle>
+          <StyledSubtitle>
+            <Emoji symbol="👻" label="ghost" /> Ghost Emoji As A Service
+          </StyledSubtitle>
+        </StyledHeader>
+        <Canvas
+          width={width}
+          height={height}
+          ghost={ghost}
+          overlay={overlay}
+          x={x}
+          y={y}
+          scale={scale}
+          grayscale={grayscale}
+          onCanvasChange={handleRefChange}
+        />
         <StyledFieldset>
-          <legend>Step 2. Face customization:</legend>
-          <StyledInputsWrapper>
-            <StyledHalfLabel>
-              Ghost Face:
-              <StyledInput type="checkbox" defaultChecked={true} onChange={toggleGhost} />
-            </StyledHalfLabel>
-
-            <StyledHalfLabel>
-              Grayscale:
-              <StyledInput type="checkbox" defaultChecked={false} onChange={toggleGrayscale} />
-            </StyledHalfLabel>
-
-            <StyledThirdLabel>
-              Offset X:
-              <StyledBlockInput
-                type="range"
-                min={-width}
-                max={width}
-                value={x}
-                onChange={(event) => setX(parseInt(event.target.value))}
-              />
-            </StyledThirdLabel>
-
-            <StyledThirdLabel>
-              Offset Y:
-              <StyledBlockInput
-                type="range"
-                min={-height}
-                max={height}
-                value={y}
-                onChange={(event) => setY(parseInt(event.target.value))}
-              />
-            </StyledThirdLabel>
-
-            <StyledThirdLabel>
-              Scale:
-              <StyledBlockInput
-                type="range"
-                min="0"
-                max={1}
-                step="0.01"
-                value={scale}
-                onChange={(event) => setScale(parseFloat(event.target.value))}
-              />
-            </StyledThirdLabel>
-          </StyledInputsWrapper>
+          <legend>Step 1. Select Overlay Image:</legend>
+          <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
         </StyledFieldset>
-      )}
 
-      <StyledLink href={downloadURL} download="ghost-name.png">
-        DOWNLOAD GHOST <StyledGrayableEmoji grayscale={grayscale} symbol="👻" label="ghost" />
-      </StyledLink>
+        {overlay && (
+          <StyledFieldset>
+            <legend>Step 2. Face customization:</legend>
+            <StyledInputsWrapper>
+              <StyledHalfLabel>
+                Ghost Face:
+                <StyledInput type="checkbox" defaultChecked={true} onChange={toggleGhost} />
+              </StyledHalfLabel>
+
+              <StyledHalfLabel>
+                Grayscale:
+                <StyledInput type="checkbox" defaultChecked={false} onChange={toggleGrayscale} />
+              </StyledHalfLabel>
+
+              <StyledThirdLabel>
+                Offset X:
+                <StyledBlockInput
+                  type="range"
+                  min={-width}
+                  max={width}
+                  value={x}
+                  onChange={(event) => setX(parseInt(event.target.value))}
+                />
+              </StyledThirdLabel>
+
+              <StyledThirdLabel>
+                Offset Y:
+                <StyledBlockInput
+                  type="range"
+                  min={-height}
+                  max={height}
+                  value={y}
+                  onChange={(event) => setY(parseInt(event.target.value))}
+                />
+              </StyledThirdLabel>
+
+              <StyledThirdLabel>
+                Scale:
+                <StyledBlockInput
+                  type="range"
+                  min="0"
+                  max={1}
+                  step="0.01"
+                  value={scale}
+                  onChange={(event) => setScale(parseFloat(event.target.value))}
+                />
+              </StyledThirdLabel>
+            </StyledInputsWrapper>
+          </StyledFieldset>
+        )}
+
+        <StyledLink href={downloadURL} download="ghost-name.png">
+          DOWNLOAD GHOST <Emoji symbol="👻" label="ghost" />
+        </StyledLink>
+      </StyledAppWrapper>
     </>
   );
 };
