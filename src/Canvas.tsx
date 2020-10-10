@@ -11,7 +11,7 @@ interface CanvasProps {
   y: number;
   scale: number;
   grayscale: boolean;
-  onCanvasChange: Function;
+  onCanvasChange: (ref: HTMLCanvasElement) => void;
 }
 
 const Canvas = (props: CanvasProps) => {
