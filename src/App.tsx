@@ -5,6 +5,7 @@ import { getFileURL, getImageFromURL, canvasToPNG } from './utils';
 import {
   GlobalStyle,
   StyledAppWrapper,
+  StyledContentWrapper,
   StyledTitle,
   StyledSubtitle,
   StyledHeader,
@@ -15,6 +16,7 @@ import {
   StyledInput,
   StyledBlockInput,
   StyledLink,
+  StyledFooter,
 } from './Styles';
 
 const ghostWithFace = `${process.env.PUBLIC_URL}/ghost.png`;
@@ -60,87 +62,92 @@ const App = () => {
     <>
       <GlobalStyle />
       <StyledAppWrapper grayscale={grayscale}>
-        <StyledHeader>
-          <StyledTitle>GEAAS</StyledTitle>
-          <StyledSubtitle>
-            <Emoji symbol="👻" label="ghost" /> Ghost Emoji As A Service
-          </StyledSubtitle>
-        </StyledHeader>
-        <Canvas
-          width={width}
-          height={height}
-          ghost={ghost}
-          overlay={overlay}
-          x={x}
-          y={y}
-          scale={scale}
-          grayscale={grayscale}
-          onCanvasChange={handleRefChange}
-        />
-        <StyledFieldset>
-          <legend>Step 1. Select Overlay Image</legend>
-          <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
-        </StyledFieldset>
-
-        {overlay && (
+        <StyledContentWrapper>
+          <StyledHeader>
+            <StyledTitle>GEAAS</StyledTitle>
+            <StyledSubtitle>
+              <Emoji symbol="👻" label="ghost" /> Ghost Emoji As A Service
+            </StyledSubtitle>
+          </StyledHeader>
+          <Canvas
+            width={width}
+            height={height}
+            ghost={ghost}
+            overlay={overlay}
+            x={x}
+            y={y}
+            scale={scale}
+            grayscale={grayscale}
+            onCanvasChange={handleRefChange}
+          />
           <StyledFieldset>
-            <legend>Step 2. Face customization</legend>
-            <StyledInputsWrapper>
-              <StyledHalfLabel>
-                Ghost Face:
-                <StyledInput type="checkbox" defaultChecked={true} onChange={toggleGhost} />
-              </StyledHalfLabel>
-
-              <StyledHalfLabel>
-                Grayscale:
-                <StyledInput type="checkbox" defaultChecked={false} onChange={toggleGrayscale} />
-              </StyledHalfLabel>
-
-              <StyledThirdLabel>
-                Offset X:
-                <StyledBlockInput
-                  type="range"
-                  min={-width}
-                  max={width}
-                  value={x}
-                  onChange={(event) => setX(parseInt(event.target.value))}
-                />
-              </StyledThirdLabel>
-
-              <StyledThirdLabel>
-                Offset Y:
-                <StyledBlockInput
-                  type="range"
-                  min={-height}
-                  max={height}
-                  value={y}
-                  onChange={(event) => setY(parseInt(event.target.value))}
-                />
-              </StyledThirdLabel>
-
-              <StyledThirdLabel>
-                Scale:
-                <StyledBlockInput
-                  type="range"
-                  min="0"
-                  max={1}
-                  step="0.01"
-                  value={scale}
-                  onChange={(event) => setScale(parseFloat(event.target.value))}
-                />
-              </StyledThirdLabel>
-            </StyledInputsWrapper>
+            <legend>Step 1. Select Overlay Image</legend>
+            <StyledInput type="file" onChange={setOverlayFromFileInput} accept=".png,.jpg" />
           </StyledFieldset>
-        )}
 
-        {overlay && (
-          <StyledFieldset>
-            <legend>Step 3. Profit!</legend>
-            <StyledLink href={downloadURL} download="ghost-name.png">
-              DOWNLOAD GHOST <Emoji symbol="👻" label="ghost" />
-            </StyledLink>
-          </StyledFieldset>
-        )}
+          {overlay && (
+            <StyledFieldset>
+              <legend>Step 2. Face customization</legend>
+              <StyledInputsWrapper>
+                <StyledHalfLabel>
+                  Ghost Face:
+                  <StyledInput type="checkbox" defaultChecked={true} onChange={toggleGhost} />
+                </StyledHalfLabel>
+
+                <StyledHalfLabel>
+                  Grayscale:
+                  <StyledInput type="checkbox" defaultChecked={false} onChange={toggleGrayscale} />
+                </StyledHalfLabel>
+
+                <StyledThirdLabel>
+                  Offset X:
+                  <StyledBlockInput
+                    type="range"
+                    min={-width}
+                    max={width}
+                    value={x}
+                    onChange={(event) => setX(parseInt(event.target.value))}
+                  />
+                </StyledThirdLabel>
+
+                <StyledThirdLabel>
+                  Offset Y:
+                  <StyledBlockInput
+                    type="range"
+                    min={-height}
+                    max={height}
+                    value={y}
+                    onChange={(event) => setY(parseInt(event.target.value))}
+                  />
+                </StyledThirdLabel>
+
+                <StyledThirdLabel>
+                  Scale:
+                  <StyledBlockInput
+                    type="range"
+                    min="0"
+                    max={1}
+                    step="0.01"
+                    value={scale}
+                    onChange={(event) => setScale(parseFloat(event.target.value))}
+                  />
+                </StyledThirdLabel>
+              </StyledInputsWrapper>
+            </StyledFieldset>
+          )}
+
+          {overlay && (
+            <StyledFieldset>
+              <legend>Step 3. Profit!</legend>
+              <StyledLink href={downloadURL} download="ghost-name.png">
+                DOWNLOAD GHOST <Emoji symbol="👻" label="ghost" />
+              </StyledLink>
+            </StyledFieldset>
+          )}
+        </StyledContentWrapper>
+        <StyledFooter>
+          GitHub: <StyledLink href="https://github.com/tribakzero/geaas">tribakzero/geeas</StyledLink>
+        </StyledFooter>
       </StyledAppWrapper>
     </>
   );
