@@ -1,6 +1,4 @@
-import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import Emoji from 'a11y-react-emoji';
 
 export const GlobalStyle = createGlobalStyle`
   body {
@@ -10,16 +8,29 @@ export const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
-  padding: 1em;
+  padding: 0;
   text-align: center;
   color: #FFFFFF;
-  background-color: #282C34;
+  min-height: 100vh;
+  }
+`;
+
+interface GrayscaleProps {
+  grayscale: boolean;
+}
+
+export const StyledAppWrapper = styled.div<GrayscaleProps>`
+  margin: 0;
+  padding: 1em;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  }
+  background-color: #282c34;
+  transition-property: filter;
+  transition-duration: 0.5s;
+  filter: grayscale(${(props) => (props.grayscale ? 100 : 0)}%);
 `;
 
 export const StyledHeader = styled.header`
@@ -86,8 +97,4 @@ export const StyledLink = styled.a`
     background-color: #222222;
     color: #eeeeee;
   }
-`;
-
-export const StyledGrayableEmoji = styled(({ grayscale: Boolean, ...props }) => <Emoji {...props} />)`
-  filter: grayscale(${(props) => (props.grayscale ? 100 : 0)}%);
 `;
