@@ -9,8 +9,12 @@ The service requires a previously cut out image of the person's face and allows 
 
 ## Features:
 - Ghost Face
-  This makes it easier for you to fit your overlay image and it will look awesome when you're done.
+This makes it easier for you to fit your overlay image and it will look awesome when you're done.
 ![Ghost face](./video/ghost-face.gif)
+
+- Grayscale
+This makes it easier for you to make the image monochromatic, which feels spookier 👻.
+![Ghost face](./video/grayscale.gif)
 
 ## Prerequisites
 - Node.JS
