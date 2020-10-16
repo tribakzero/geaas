@@ -7,6 +7,11 @@ In Mexico we are very used to take goodbyes in a fun way, that's why when a coll
 
 The service requires a previously cut out image of the person's face and allows you to adjust it to fit the emoji. The tool has scale, grayScale, and X/Y offsets, also a way to remove the emoji's original face.
 
+## Features:
+- Ghost Face
+  This makes it easier for you to fit your overlay image and it will look awesome when you're done.
+![Ghost face](https://media.giphy.com/media/H9THIrioaIWGnmPAha/giphy.gif)
+
 ## Prerequisites
 - Node.JS
 - Yarn
