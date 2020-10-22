@@ -16,6 +16,10 @@ This makes it easier for you to fit your overlay image and it will look awesome 
 This makes it easier for you to make the image monochromatic, which feels spookier 👻.
 ![Ghost face](./video/grayscale.gif)
 
+- Offset X
+This makes it easier for you to adjust your image in the desired position from left to right and it's almost ready.
+![Ghost face](./video/offset-x.gif)
+
 ## Prerequisites
 - Node.JS
 - Yarn
