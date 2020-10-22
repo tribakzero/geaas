@@ -20,6 +20,14 @@ This makes it easier for you to make the image monochromatic, which feels spooki
 This makes it easier for you to adjust your image in the desired position from left to right and it's almost ready.
 ![Ghost face](./video/offset-x.gif)
 
+- Offset Y
+Same as with Position X, this one will let you finely position your image from top to bottom, always keep your head up :)
+![Ghost face](./video/offset-y.gif)
+
+- Scale
+Small, big, all faces are born different, you can change the size of your image with no pain using this slider.
+![Ghost face](./video/scale.gif)
+
 ## Prerequisites
 - Node.JS
 - Yarn
