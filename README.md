@@ -1,7 +1,7 @@
 # GEAAS
 👻 Ghost Emoji As A Service
 
-https://geaas.herokuapp.com/
+https://geaas.vercel.app/
 
 In Mexico we are very used to take goodbyes in a fun way, that's why when a colleague leaves the office we make their own emoji ghost to "honor the fallen".
 
