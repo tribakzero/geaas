@@ -9,11 +9,6 @@
     "lint": "yarn tsc --noEmit && yarn eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
     "eject": "react-scripts eject"
   },
-  "engines": {
-    "npm": "6.x",
-    "node": "12.x",
-    "yarn": "1.x"
-  },
   "dependencies": {
     "a11y-react-emoji": "^1.1.2",
     "react": "^16.13.1",
