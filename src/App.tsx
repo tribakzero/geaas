@@ -19,10 +19,15 @@ import {
   StyledFooter,
 } from './Styles';
 
-const ghostWithFace = `${process.env.PUBLIC_URL}/ghost.png`;
-const facelessGhost = `${process.env.PUBLIC_URL}/faceless.png`;
+const BASE_URL = import.meta.env.VITE_APP_PUBLIC_URL;
 
-const App = () => {
+const ghostWithFace = `${BASE_URL}/ghost.png`;
+const facelessGhost = `${BASE_URL}/faceless.png`;
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface AppProps {}
+
+const App: React.FC<AppProps> = () => {
   const width = 160;
   const height = 160;
   const [ghost, setGhost] = useState<HTMLImageElement | null>(null);
