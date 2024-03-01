@@ -14,7 +14,7 @@ interface CanvasProps {
   onCanvasChange: (ref: HTMLCanvasElement) => void;
 }
 
-const Canvas = (props: CanvasProps) => {
+const Canvas: React.FC<CanvasProps> = (props) => {
   const { width, height, onCanvasChange, ghost, overlay, x, y, scale, grayscale } = props;
 
   useEffect(() => {
