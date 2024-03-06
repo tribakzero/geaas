@@ -1,9 +1,11 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React from 'react';;
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders app title', () => {
-  const { getByText } = render(<App />);
-  const titleElement = getByText(/GEAAS/i);
-  expect(titleElement).toBeInTheDocument();
+describe('App', () => {
+  test('renders app title', () => {
+    render(<App />);
+    const title = screen.getByTestId('application-title');
+    expect(title).toBeInTheDocument();
+  });
 });
