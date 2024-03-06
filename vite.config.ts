@@ -2,14 +2,24 @@
 /// <reference types="vite/client" />
 
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
-import path from "path";
+import eslint from 'vite-plugin-eslint';
+
+const excludedFilesPath = [
+  "src/App.test.tsx",
+];
+
+const filesPathToExclude = excludedFilesPath.map((path) => {
+  return fileURLToPath(new URL(path, import.meta.url));
+});
+
 
 export default defineConfig({
   // depending on your application, base can also be "/"
   base: '',
-  plugins: [react(), viteTsconfigPaths()],
+  plugins: [react(), viteTsconfigPaths(), eslint()],
   server: {
     // this ensures that the browser opens upon server start
     open: true,
@@ -34,6 +44,14 @@ export default defineConfig({
     },
     coverage: {
       provider: "v8",
+    }
+  },
+  build: {
+    manifest: true,
+    rollupOptions: {
+      external: [
+        ...filesPathToExclude,
+      ]
     }
   }
 });
