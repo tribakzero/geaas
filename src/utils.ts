@@ -7,7 +7,7 @@ export const getFileURL = (file: File): Promise<string> => {
   });
 };
 
-const imageCache: any = {};
+const imageCache: Record<string, HTMLImageElement> = {};
 
 export const getImageFromURL = (url: string): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
