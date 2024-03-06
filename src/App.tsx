@@ -69,7 +69,7 @@ const App: React.FC<AppProps> = () => {
       <StyledAppWrapper grayscale={grayscale}>
         <StyledContentWrapper>
           <StyledHeader>
-            <StyledTitle>GEAAS</StyledTitle>
+            <StyledTitle data-testid="application-title">GEAAS</StyledTitle>
             <StyledSubtitle>
               <Emoji symbol="👻" label="ghost" /> Ghost Emoji As A Service
             </StyledSubtitle>
