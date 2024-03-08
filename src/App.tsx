@@ -19,10 +19,9 @@ import {
   StyledFooter,
 } from './Styles';
 
-const BASE_URL = import.meta.env.VITE_APP_PUBLIC_URL;
 
-const ghostWithFace = `${BASE_URL}/ghost.png`;
-const facelessGhost = `${BASE_URL}/faceless.png`;
+const ghostWithFace = "/ghost.png";
+const facelessGhost = "/faceless.png";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface AppProps {}
