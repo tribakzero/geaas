@@ -19,10 +19,14 @@ import {
   StyledFooter,
 } from './Styles';
 
-const ghostWithFace = `${process.env.PUBLIC_URL}/ghost.png`;
-const facelessGhost = `${process.env.PUBLIC_URL}/faceless.png`;
 
-const App = () => {
+const ghostWithFace = "/ghost.png";
+const facelessGhost = "/faceless.png";
+
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface AppProps {}
+
+const App: React.FC<AppProps> = () => {
   const width = 160;
   const height = 160;
   const [ghost, setGhost] = useState<HTMLImageElement | null>(null);
@@ -64,7 +68,7 @@ const App = () => {
       <StyledAppWrapper grayscale={grayscale}>
         <StyledContentWrapper>
           <StyledHeader>
-            <StyledTitle>GEAAS</StyledTitle>
+            <StyledTitle data-testid="application-title">GEAAS</StyledTitle>
             <StyledSubtitle>
               <Emoji symbol="👻" label="ghost" /> Ghost Emoji As A Service
             </StyledSubtitle>
