@@ -22,7 +22,7 @@ import {
 const ghostWithFace = `/ghost.png`;
 const facelessGhost = `/faceless.png`;
 
-function App(): JSX.Element {
+function App() {
   const width = 160;
   const height = 160;
   const [ghost, setGhost] = useState<HTMLImageElement | null>(null);
