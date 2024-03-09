@@ -151,6 +151,6 @@ function App(): JSX.Element {
       </StyledAppWrapper>
     </>
   );
-};
+}
 
 export default App;
