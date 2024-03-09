@@ -2,12 +2,13 @@ export const getFileURL = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
     const fileReader = new FileReader();
     fileReader.readAsDataURL(file);
-    fileReader.onload = (event) => resolve(event.target?.result?.toString());
+    fileReader.onload = (event) =>
+      resolve(event.target?.result?.toString() || "");
     fileReader.onerror = (error) => reject(error);
   });
 };
 
-const imageCache: any = {};
+const imageCache = {} as { [key: string]: HTMLImageElement };
 
 export const getImageFromURL = (url: string): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
@@ -24,4 +25,5 @@ export const getImageFromURL = (url: string): Promise<HTMLImageElement> => {
   });
 };
 
-export const canvasToPNG = (canvas: HTMLCanvasElement): string => canvas.toDataURL('image/png');
+export const canvasToPNG = (canvas: HTMLCanvasElement): string =>
+  canvas.toDataURL("image/png");

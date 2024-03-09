@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import { useState, useEffect, ChangeEvent } from 'react';
 import Emoji from 'a11y-react-emoji';
 import Canvas from './Canvas';
 import { getFileURL, getImageFromURL, canvasToPNG } from './utils';
@@ -19,10 +19,10 @@ import {
   StyledFooter,
 } from './Styles';
 
-const ghostWithFace = `${process.env.PUBLIC_URL}/ghost.png`;
-const facelessGhost = `${process.env.PUBLIC_URL}/faceless.png`;
+const ghostWithFace = `/ghost.png`;
+const facelessGhost = `/faceless.png`;
 
-const App = () => {
+function App() {
   const width = 160;
   const height = 160;
   const [ghost, setGhost] = useState<HTMLImageElement | null>(null);
@@ -151,6 +151,6 @@ const App = () => {
       </StyledAppWrapper>
     </>
   );
-};
+}
 
 export default App;
